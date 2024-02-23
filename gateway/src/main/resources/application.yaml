@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: commande-service-route
+          uri: http://localhost:8091/
+          predicates:
+            - Path=/api/commande-service/**
+
+        - id: client-service-route
+          uri: http://localhost:8092/
+          predicates:
+            - Path=/api/client-service/**
+
+
